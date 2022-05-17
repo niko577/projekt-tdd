@@ -11,4 +11,8 @@ export class Employees {
     add(employee: Employee): void {
         this.list.push(employee);
     }
+
+    remove(id) {
+        this.list = this.list.filter(employee => employee.id !== id);
+    }
 }
