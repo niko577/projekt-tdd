@@ -12,7 +12,7 @@ export class Employees {
         this.list.push(employee);
     }
 
-    remove(id) {
-        this.list = this.list.filter(employee => employee.id !== id);
+    remove(id: number): void {
+        this.list = this.list.filter((employee: Employee) => employee.id !== id);
     }
 }
