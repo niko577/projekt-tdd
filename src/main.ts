@@ -1,4 +1,9 @@
+interface Employee {
+    id: number;
+    firstName: string;
+    lastName: string;
+}
 export class Employees {
-    list = [];
+    list: Employee[] = [];
     constructor() {}
 }
