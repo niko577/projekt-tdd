@@ -42,4 +42,25 @@ describe('employees', () => {
 
         expect(employees.list).toEqual([]);
     });
+
+    it('the ability to edit the employee', () => {
+        const employees = new Employees();
+
+        employees.add({
+            id: 1,
+            firstName: 'John',
+            lastName: 'Doe'
+        });
+
+        employees.edit(1, {
+            firstName: 'Jane',
+            lastName: 'Nowak'
+        });
+
+        expect(employees.list).toEqual([{
+            id: 1,
+            firstName: 'Jane',
+            lastName: 'Nowak'
+        }]);
+    });
 })
