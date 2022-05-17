@@ -5,5 +5,10 @@ interface Employee {
 }
 export class Employees {
     list: Employee[] = [];
+
     constructor() {}
+
+    add(employee: Employee) {
+        this.list.push(employee);
+    }
 }
