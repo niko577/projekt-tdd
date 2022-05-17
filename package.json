@@ -2,11 +2,12 @@
   "name": "tdd",
   "private": true,
   "version": "0.0.0",
+  "main": "../main.ts",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "test": "jest --watchAll --verbose --coverage"
+    "test": "jest --watchAll --verbose"
   },
   "devDependencies": {
     "@types/jest": "^27.5.1",
