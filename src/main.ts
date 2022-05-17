@@ -16,8 +16,8 @@ export class Employees {
         this.list = this.list.filter((employee: Employee) => employee.id !== id);
     }
 
-    edit(id, data): void {
-        const index = this.list.findIndex((employee) => employee.id === id);
+    edit(id: number, data: Omit<Employee, 'id'>): void {
+        const index = this.list.findIndex((employee: Employee) => employee.id === id);
         if (index !== -1) {
             this.list[index] = {
                 ...this.list[index],
