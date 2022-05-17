@@ -8,7 +8,7 @@ export class Employees {
 
     constructor() {}
 
-    add(employee: Employee) {
+    add(employee: Employee): void {
         this.list.push(employee);
     }
 }
