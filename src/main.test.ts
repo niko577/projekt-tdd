@@ -134,7 +134,7 @@ describe('skills', () => {
             name: 'Rust',
         });
 
-        expect(skills.getSkillList).toBe([
+        expect(skills.getSkillList).toEqual([
             {
                 id: 1,
                 name: 'PHP',

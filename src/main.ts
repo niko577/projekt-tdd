@@ -36,6 +36,10 @@ export class Skills {
 
     constructor() {}
 
+    get getSkillList() {
+        return this.list;
+    }
+
     add(skill: Skill): void {
         if (!this.list.find((item: Skill) => item.name === skill.name)) {
             this.list.push(skill);
