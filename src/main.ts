@@ -26,3 +26,9 @@ export class Employees {
         }
     }
 }
+
+export class Skills {
+    list = [];
+
+    constructor() {}
+}
