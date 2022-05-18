@@ -64,3 +64,11 @@ describe('employees', () => {
         }]);
     });
 })
+
+describe('skills', () => {
+    it('skills array exists', () => {
+        const skills = new Skills();
+
+        expect(skills.list).toEqual([]);
+    });
+});
