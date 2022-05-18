@@ -41,4 +41,8 @@ export class Skills {
             this.list.push(skill);
         }
     }
+
+    remove(id) {
+        this.list = this.list.filter((skill) => skill.id !== id);
+    }
 }
