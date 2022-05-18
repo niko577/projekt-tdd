@@ -2,6 +2,7 @@ interface Employee {
     id: number;
     firstName: string;
     lastName: string;
+    skills: number[];
 }
 interface Skill {
     id: number;
@@ -27,6 +28,13 @@ export class Employees {
                 ...this.list[index],
                 ...data
             };
+        }
+    }
+
+    addSkill({ employeeId, skillId }: { employeeId: number; skillId: number }) {
+        const employee = this.list.find((employee) => employee.id === employeeId);
+        if (employee) {
+            employee.skills.push(skillId);
         }
     }
 }

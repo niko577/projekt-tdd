@@ -13,13 +13,15 @@ describe('employees', () => {
         employees.add({
             id: 1,
             firstName: 'John',
-            lastName: 'Doe'
+            lastName: 'Doe',
+            skills: []
         });
 
         expect(employees.list).toEqual([{
             id: 1,
             firstName: 'John',
-            lastName: 'Doe'
+            lastName: 'Doe',
+            skills: []
         }]);
     });
 
@@ -29,13 +31,15 @@ describe('employees', () => {
         employees.add({
             id: 1,
             firstName: 'John',
-            lastName: 'Doe'
+            lastName: 'Doe',
+            skills: []
         });
 
         expect(employees.list).toEqual([{
             id: 1,
             firstName: 'John',
-            lastName: 'Doe'
+            lastName: 'Doe',
+            skills: []
         }]);
 
         employees.remove(1);
@@ -49,18 +53,21 @@ describe('employees', () => {
         employees.add({
             id: 1,
             firstName: 'John',
-            lastName: 'Doe'
+            lastName: 'Doe',
+            skills: []
         });
 
         employees.edit(1, {
             firstName: 'Jane',
-            lastName: 'Nowak'
+            lastName: 'Nowak',
+            skills: []
         });
 
         expect(employees.list).toEqual([{
             id: 1,
             firstName: 'Jane',
-            lastName: 'Nowak'
+            lastName: 'Nowak',
+            skills: []
         }]);
     });
 })
@@ -172,12 +179,14 @@ describe('skill to employee', () => {
         employees.add({
             id: 1,
             firstName: 'John',
-            lastName: 'Doe'
+            lastName: 'Doe',
+            skills: []
         });
         employees.add({
             id: 2,
             firstName: 'Karol',
-            lastName: 'Nowak'
+            lastName: 'Nowak',
+            skills: []
         });
 
         employees.addSkill({
@@ -209,7 +218,7 @@ describe('skill to employee', () => {
                 id: 2,
                 firstName: 'Karol',
                 lastName: 'Nowak',
-                skils: [2, 3]
+                skills: [2, 3]
             }
         ]);
     });
