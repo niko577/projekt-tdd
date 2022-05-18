@@ -37,6 +37,13 @@ export class Employees {
             employee.skills.push(skillId);
         }
     }
+
+    removeSkill({ employeeId, skillId }: { employeeId: number; skillId: number }): void {
+        const employee = this.list.find((employee: Employee) => employee.id === employeeId);
+        if (employee) {
+            employee.skills = employee.skills.filter((skill: number) => skill !== skillId);
+        }
+    }
 }
 
 export class Skills {
