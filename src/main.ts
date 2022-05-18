@@ -42,7 +42,7 @@ export class Skills {
         }
     }
 
-    remove(id) {
-        this.list = this.list.filter((skill) => skill.id !== id);
+    remove(id: number): void {
+        this.list = this.list.filter((skill: Skill) => skill.id !== id);
     }
 }
