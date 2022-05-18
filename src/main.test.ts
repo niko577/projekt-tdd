@@ -71,4 +71,19 @@ describe('skills', () => {
 
         expect(skills.list).toEqual([]);
     });
+
+    
+    it('it is possible to add skill', () => {
+        const skills = new Skills();
+
+        skills.add({
+            id: 1,
+            name: 'JavaScript'
+        });
+
+        expect(skills.list).toEqual([{
+            id: 1,
+            name: 'JavaScript'
+        }]);
+    });
 });
