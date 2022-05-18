@@ -32,7 +32,7 @@ export class Skills {
 
     constructor() {}
 
-    add(skill) {
+    add(skill: string): void {
         this.list.push(skill);
     }
 }
