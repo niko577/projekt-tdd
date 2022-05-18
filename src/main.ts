@@ -13,15 +13,15 @@ export class Employees {
 
     constructor() {}
 
-    add(employee: Employee): void {
+    public add(employee: Employee): void {
         this.list.push(employee);
     }
 
-    remove(id: number): void {
+    public remove(id: number): void {
         this.list = this.list.filter((employee: Employee) => employee.id !== id);
     }
 
-    edit(id: number, data: Omit<Employee, 'id'>): void {
+    public edit(id: number, data: Omit<Employee, 'id'>): void {
         const index = this.list.findIndex((employee: Employee) => employee.id === id);
         if (index !== -1) {
             this.list[index] = {
@@ -31,14 +31,14 @@ export class Employees {
         }
     }
 
-    addSkill({ employeeId, skillId }: { employeeId: number; skillId: number }): void {
+    public addSkill({ employeeId, skillId }: { employeeId: number; skillId: number }): void {
         const employee = this.list.find((employee: Employee) => employee.id === employeeId);
         if (employee) {
             employee.skills.push(skillId);
         }
     }
 
-    removeSkill({ employeeId, skillId }: { employeeId: number; skillId: number }): void {
+    public removeSkill({ employeeId, skillId }: { employeeId: number; skillId: number }): void {
         const employee = this.list.find((employee: Employee) => employee.id === employeeId);
         if (employee) {
             employee.skills = employee.skills.filter((skill: number) => skill !== skillId);
