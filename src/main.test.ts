@@ -222,4 +222,88 @@ describe('skill to employee', () => {
             }
         ]);
     });
+
+    it('can remove skill from employee', () => {
+        const skills = new Skills();
+        const employees = new Employees();
+
+        skills.add({
+            id: 1,
+            name: 'PHP',
+        });
+        skills.add({
+            id: 2,
+            name: 'Node',
+        });
+        skills.add({
+            id: 3,
+            name: 'Rust',
+        });
+
+        employees.add({
+            id: 1,
+            firstName: 'John',
+            lastName: 'Doe',
+            skills: []
+        });
+        employees.add({
+            id: 2,
+            firstName: 'Karol',
+            lastName: 'Nowak',
+            skills: []
+        });
+
+        employees.addSkill({
+            employeeId: 1,
+            skillId: 1
+        });
+        employees.addSkill({
+            employeeId: 1,
+            skillId: 2
+        });
+
+        employees.addSkill({
+            employeeId: 2,
+            skillId: 2
+        });
+        employees.addSkill({
+            employeeId: 2,
+            skillId: 3
+        });
+
+        expect(employees.list).toEqual([
+            {
+                id: 1,
+                firstName: 'John',
+                lastName: 'Doe',
+                skills: [1, 2]
+            },
+            {
+                id: 2,
+                firstName: 'Karol',
+                lastName: 'Nowak',
+                skills: [2, 3]
+            }
+        ]);
+
+        employees.removeSkill({
+            employeeId: 1,
+            skillId: 2
+        });
+
+        expect(employees.list).toEqual([
+            {
+                id: 1,
+                firstName: 'John',
+                lastName: 'Doe',
+                skills: [1]
+            },
+            {
+                id: 2,
+                firstName: 'Karol',
+                lastName: 'Nowak',
+                skills: [2, 3]
+            }
+        ]);
+    });
 });
