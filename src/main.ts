@@ -31,8 +31,8 @@ export class Employees {
         }
     }
 
-    addSkill({ employeeId, skillId }: { employeeId: number; skillId: number }) {
-        const employee = this.list.find((employee) => employee.id === employeeId);
+    addSkill({ employeeId, skillId }: { employeeId: number; skillId: number }): void {
+        const employee = this.list.find((employee: Employee) => employee.id === employeeId);
         if (employee) {
             employee.skills.push(skillId);
         }
