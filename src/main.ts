@@ -3,6 +3,10 @@ interface Employee {
     firstName: string;
     lastName: string;
 }
+interface Skill {
+    id: number;
+    name: string;
+}
 export class Employees {
     list: Employee[] = [];
 
@@ -28,11 +32,11 @@ export class Employees {
 }
 
 export class Skills {
-    list: string[] = [];
+    list: Skill[] = [];
 
     constructor() {}
 
-    add(skill: string): void {
+    add(skill: Skill): void {
         this.list.push(skill);
     }
 }

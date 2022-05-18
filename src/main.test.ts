@@ -86,4 +86,22 @@ describe('skills', () => {
             name: 'JavaScript'
         }]);
     });
+
+    it('two skills with the same name cannot be added', () => {
+        const skills = new Skills();
+
+        skills.add({
+            id: 1,
+            name: 'JavaScript'
+        });
+        skills.add({
+            id: 2,
+            name: 'JavaScript'
+        });
+
+        expect(skills.list).toEqual([{
+            id: 1,
+            name: 'JavaScript'
+        }]);
+    });
 });
