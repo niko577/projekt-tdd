@@ -150,3 +150,67 @@ describe('skills', () => {
         ]);
     });
 });
+
+describe('skill to employee', () => {
+    it('can add skills to employee', () => {
+        const skills = new Skills();
+        const employees = new Employees();
+
+        skills.add({
+            id: 1,
+            name: 'PHP',
+        });
+        skills.add({
+            id: 2,
+            name: 'Node',
+        });
+        skills.add({
+            id: 3,
+            name: 'Rust',
+        });
+
+        employees.add({
+            id: 1,
+            firstName: 'John',
+            lastName: 'Doe'
+        });
+        employees.add({
+            id: 2,
+            firstName: 'Karol',
+            lastName: 'Nowak'
+        });
+
+        employees.addSkill({
+            employeeId: 1,
+            skillId: 1
+        });
+        employees.addSkill({
+            employeeId: 1,
+            skillId: 2
+        });
+
+        employees.addSkill({
+            employeeId: 2,
+            skillId: 2
+        });
+        employees.addSkill({
+            employeeId: 2,
+            skillId: 3
+        });
+
+        expect(employees.list).toEqual([
+            {
+                id: 1,
+                firstName: 'John',
+                lastName: 'Doe',
+                skills: [1, 2]
+            },
+            {
+                id: 2,
+                firstName: 'Karol',
+                lastName: 'Nowak',
+                skils: [2, 3]
+            }
+        ]);
+    });
+});
