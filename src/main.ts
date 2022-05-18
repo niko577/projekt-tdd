@@ -28,7 +28,7 @@ export class Employees {
 }
 
 export class Skills {
-    list = [];
+    list: string[] = [];
 
     constructor() {}
 }

@@ -1,4 +1,4 @@
-import { Employees } from "./main";
+import { Employees, Skills } from "./main";
 
 describe('employees', () => {
     it('employees array exists', () => {
