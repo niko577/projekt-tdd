@@ -104,4 +104,17 @@ describe('skills', () => {
             name: 'JavaScript'
         }]);
     });
+
+    it('it is possible to remove skill', () => {
+        const skills = new Skills();
+
+        skills.add({
+            id: 1,
+            name: 'PHP',
+        });
+
+        skills.remove(1);
+
+        expect(skills.list).toEqual([]);
+    });
 });
