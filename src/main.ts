@@ -32,11 +32,11 @@ export class Employees {
 }
 
 export class Skills {
-    list: Skill[] = [];
+    private list: Skill[] = [];
 
     constructor() {}
 
-    get getSkillList() {
+    get getSkillList(): Skill[] {
         return this.list;
     }
 

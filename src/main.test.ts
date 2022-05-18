@@ -69,7 +69,7 @@ describe('skills', () => {
     it('skills array exists', () => {
         const skills = new Skills();
 
-        expect(skills.list).toEqual([]);
+        expect(skills.getSkillList).toEqual([]);
     });
 
     
@@ -81,7 +81,7 @@ describe('skills', () => {
             name: 'JavaScript'
         });
 
-        expect(skills.list).toEqual([{
+        expect(skills.getSkillList).toEqual([{
             id: 1,
             name: 'JavaScript'
         }]);
@@ -99,7 +99,7 @@ describe('skills', () => {
             name: 'JavaScript'
         });
 
-        expect(skills.list).toEqual([{
+        expect(skills.getSkillList).toEqual([{
             id: 1,
             name: 'JavaScript'
         }]);
@@ -115,7 +115,7 @@ describe('skills', () => {
 
         skills.remove(1);
 
-        expect(skills.list).toEqual([]);
+        expect(skills.getSkillList).toEqual([]);
     });
 
     it('it is possible to get skill list', () => {
