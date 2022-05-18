@@ -31,4 +31,8 @@ export class Skills {
     list: string[] = [];
 
     constructor() {}
+
+    add(skill) {
+        this.list.push(skill);
+    }
 }
