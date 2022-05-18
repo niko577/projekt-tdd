@@ -117,4 +117,36 @@ describe('skills', () => {
 
         expect(skills.list).toEqual([]);
     });
+
+    it('it is possible to get skill list', () => {
+        const skills = new Skills();
+
+        skills.add({
+            id: 1,
+            name: 'PHP',
+        });
+        skills.add({
+            id: 2,
+            name: 'Node',
+        });
+        skills.add({
+            id: 3,
+            name: 'Rust',
+        });
+
+        expect(skills.getSkillList).toBe([
+            {
+                id: 1,
+                name: 'PHP',
+            },
+            {
+                id: 2,
+                name: 'Node',
+            },
+            {
+                id: 3,
+                name: 'Rust',
+            }
+        ]);
+    });
 });
